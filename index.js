@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb");
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 require('dotenv').config()
 const prefix = process.env.prefix;
-const token = precess.env.token;
+const token = process.env.token;
 function between(min, max) {return Math.floor(Math.random() * (max - min) + min)}
 function newStatus() {
 if (between(0,10) > 4) {
