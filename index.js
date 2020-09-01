@@ -31,13 +31,13 @@ if (message.author.bot===false) {
 const args = message.content.split(" ");
 const command = message.content.substring(prefix.length,message.content.length);
 if (command.startsWith("ticket")===true){
-message.react("🎟");
+message.channel.bulkDelete(1);
 const embed = new Discord.MessageEmbed()
 .setColor("#0099ff")
 .setTitle(":tickets: | Ticket")
 .setDescription("React to this message to create a ticket")
 .setFooter("Ticket bot");
-message.channel.send(embed)
+message.channel.send("^ticket",[embed])
 .then(function(message) {
 message.react("🎟");
 }).catch(function(){});
