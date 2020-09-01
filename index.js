@@ -27,13 +27,12 @@ var server = reaction.message.guild;
 server.channels.create("ticket-"+user.username);
 }}});
 client.on('message', async message => {
-if (message.author.bot===false) {
+if (message.author.bot===false&&message.content.startsWith(prefix)===true) {
 const args = message.content.split(" ");
 const command = message.content.substring(prefix.length,message.content.length);
 if (command.startsWith("ticket")===true){
 var string = command.substring(7,message.content.length);
 if (string=="") {var string = ""}
-message.channel.bulkDelete(1);
 const embed = new Discord.MessageEmbed()
 .setColor("#0099ff")
 .setTitle(":tickets: | Ticket")
